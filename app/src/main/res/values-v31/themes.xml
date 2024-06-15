@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.LoginProject" parent="android:Theme.Material.Light.NoActionBar" />
-
     <style name="SpalashScrrenTheme" parent="Theme.LoginProject">
 
         <item name="android:windowSplashScreenBackground">@color/white</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/truck_8716758</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/shopping</item>
         <item name="android:windowSplashScreenAnimationDuration">500</item>
         <item name="postSplashScreenTheme">@style/Theme.LoginProject</item>
 

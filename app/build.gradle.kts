@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+    id ("kotlin-kapt")
+    kotlin("kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -68,7 +72,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation ("androidx.compose.material:material-icons-extended:1.0.0") // font
+    implementation("androidx.compose.material:material-icons-extended:1.0.0") // font
 //    implementation ("io.coil-kt:coil-compose: ")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")         //  retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")  //  Gson Convertor
@@ -76,5 +80,36 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 
     implementation("androidx.core:core-splashscreen:1.0.1")  // Splash Screen
+    implementation ("androidx.compose.ui:ui-text-google-fonts:1.6.7")  // google font
 
+    // CameraX
+    implementation ("androidx.camera:camera-camera2:1.0.1")
+    implementation ("androidx.camera:camera-lifecycle:1.0.1")
+    implementation ("androidx.camera:camera-view:1.0.0-alpha27")
+
+    // Coil
+//    implementation ("io.coil-kt:coil-compose:1.4.0")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    //okhttp
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.12.0")
+    //moshi
+    implementation ("com.squareup.moshi:moshi-kotlin:1.15.1")
+
+    //room database
+    implementation ("androidx.room:room-runtime:2.4.0")
+    implementation ("androidx.room:room-ktx:2.4.0")
+
+    implementation ("com.google.dagger:hilt-android:2.44")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    kapt ("com.google.dagger:hilt-android-compiler:2.44")
+    kapt ("androidx.hilt:hilt-compiler:1.2.0")
+    kapt("androidx.room:room-compiler:2.6.1")
+
+}
+
+kapt {
+    correctErrorTypes = true
 }

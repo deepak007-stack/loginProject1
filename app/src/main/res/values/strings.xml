@@ -2,4 +2,5 @@
     <string name="app_name">LoginProject</string>
     <string name="logo">image logo</string>
     <string name="register">register</string>
+    <string name="fileprovider">com.example.loginproject.camera.fileprovider</string>
 </resources>

@@ -56,18 +56,20 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
 fun Login(navController: NavHostController) {
 
+    LoginContent(navController = navController)
+}
+
+@Composable
+fun LoginContent(navController: NavHostController) {
     var result by remember { mutableStateOf<LoginResponse?>(null) }
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
-
     val context1 = LocalContext.current
     val androidId = Settings.Secure.getString(context1.contentResolver, Settings.Secure.ANDROID_ID)
-
 
     Column(
         modifier = Modifier
